@@ -1,0 +1,85 @@
+:root{
+    --main-color-: rgba(202, 156, 78, 1);
+    --second-color-:rgba(238, 203, 145, 1);
+    --black-: rgba(25, 25, 25, 1);
+    --white-: rgba(246, 246, 246, 1);
+}
+
+body{
+    z-index: 1;
+    background-color: var(--white-);
+    background-image: url(imgs/backgroundBody.png);
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    padding-top: 4.2vw;
+}
+
+.gradient-background{
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(180deg, var(--white-) 20%, transparent 100%);
+    pointer-events: none;
+}
+
+header{
+    z-index: 2;
+    position: fixed;
+    top: 3vw;
+    display: flex;
+    justify-content: space-between;
+    width: 40vw;
+    height: 4.5vh;
+    padding: 0 20px 0 20px;
+    border-radius: 80px;
+    background-color: var(--white-);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.219);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+}
+
+.bannerMain{
+    z-index: 1;
+    background-image: url(imgs/bannerImg.png);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    border-radius: 18px;
+    width: 90vw;
+    min-width: 600px;
+    height: 25vw;
+    min-height: 200px;
+}
+
+.bannerMain > h1{
+    font-size: 4.5vw;
+    width: 50vw;
+    margin-left: 2%;
+}
+
+.achievements-grid{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1%;
+}
+
+.divAchievements{
+    background-color: red;
+    width: 28vw;
+    height: 11vw;
+    min-height: 100px;
+    border-radius: 18px;
+}
