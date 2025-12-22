@@ -3,11 +3,19 @@
     --second-color-:rgba(238, 203, 145, 1);
     --black-: rgba(25, 25, 25, 1);
     --white-: rgba(246, 246, 246, 1);
+    --main-font-: "IBM Plex Sans", sans-serif;
+    --second-font-: "Petit Formal Script", cursive;
 }
 
 *{
     margin: 0;
     padding: 0;
+    font-family: var(--main-font-);
+}
+
+span{
+    font-family: var(--second-font-);
+    font-weight: 400;
 }
 
 body{
@@ -15,7 +23,8 @@ body{
     background-color: var(--white-);
     background-image: url(imgs/backgroundBody.png);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding-top: 4.2vw;
     overflow-x: hidden;
 }
@@ -35,6 +44,7 @@ header{
     position: fixed;
     top: 3vw;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 40vw;
     min-width: 300px;
@@ -44,6 +54,39 @@ header{
     border-radius: 80px;
     background-color: var(--white-);
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.219);
+}
+
+.menuButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.logoHeader{
+    display: flex;
+    align-items: center;
+    margin-left: 13%;
+}
+
+.logoY{
+    height: 1.5vw;
+}
+
+.instagramHbutton{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--main-color-);
+    color: var(--white-);
+    font-weight: 500;
+    border: none;
+    border-radius: 7px;
+    width: 7.5vw;
+    height: 1.7vw;
+    cursor: pointer;
 }
 
 main{
@@ -70,9 +113,10 @@ main{
 }
 
 .bannerMain > h1{
-    font-size: 4.5vw;
-    width: 50vw;
+    font-size: 4vw;
+    width: 40vw;
     margin-left: 2%;
+    color: var(--white-);
 }
 
 .achievements-grid{
@@ -83,11 +127,16 @@ main{
 }
 
 .divAchievements{
-    background-color: red;
+    background-color: var(--white-);
     width: 28vw;
     height: 11vw;
     min-height: 70px;
     border-radius: 18px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+}
+
+.mainAchievements{
+    background: linear-gradient(180deg, var(--second-color-), var(--main-color-));
 }
 
 .aboutStore{
@@ -178,7 +227,7 @@ main{
 .garden-grid{
     display: grid;
     grid-template-areas: 
-    'title textG'
+    'titleG textG'
     'button textG'
     ;
     align-items: center;
@@ -188,7 +237,7 @@ main{
 }
 
 .titleGarden{
-    grid-area: title;
+    grid-area: titleG;
 }
 
 .titleGarden > h1{
@@ -235,10 +284,57 @@ main{
     margin-left: -13vw;
 }
 
+footer{
+    margin-top: 8%;
+    display: grid;
+    justify-content: center;
+    grid-template-areas: 
+    'columnF contactF company'
+    'columnF socialF company'
+    'columnF . copyright'
+    ;
+    padding-bottom: 1%;
+    width: 100vw;
+}
+
+.column-footer{
+    grid-area: columnF;
+    background-color: var(--main-color-);
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    border-radius: 0 0 40px 40px;
+    width: 18vw;
+    height: 30vw;
+    margin-right: 6vw;
+}
+
+.contactFooter{
+    grid-area: contactF;
+    align-self: center;
+    margin-right: 30vw;
+}
+
+.socialMidiaFooter{
+    grid-area: socialF;
+    align-self: center;
+    margin-right: 30vw;
+}
+
+.company{
+    grid-area: company;
+    align-self: center;
+}
+
+.copyright{
+    grid-area: copyright;
+    align-self: end;
+}
+
 @media (max-width: 600px) {
     .garden-grid{
     grid-template-areas: 
-    'title'
+    'titleG'
     'textG'
     'button'
     ;
