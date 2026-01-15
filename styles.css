@@ -65,14 +65,20 @@ header{
     cursor: pointer;
 }
 
+.menuButton > img{
+    height: 1.5vw;
+    min-height: 17px;
+}
+
 .logoHeader{
     display: flex;
     align-items: center;
-    margin-left: 13%;
+    margin-left: 12%;
 }
 
 .logoY{
     height: 1.5vw;
+    min-height: 17px;
 }
 
 .instagramHbutton{
@@ -85,8 +91,14 @@ header{
     border: none;
     border-radius: 7px;
     width: 7.5vw;
+    min-width: 21px;
     height: 1.7vw;
+    min-height: 20px;
     cursor: pointer;
+}
+
+a{
+    text-decoration: none;
 }
 
 main{
@@ -259,8 +271,9 @@ main{
 }
 
 .garden-images{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
 }
 
 .gardenTransformation{
@@ -271,7 +284,9 @@ main{
 .gardenBefore > img  {
     object-fit: cover;
     width: 23vw;
+    min-width: 250px;
     height: 27vw;
+    min-height: 350px;
 }
 
 .gardenAfter{
@@ -331,13 +346,94 @@ footer{
     align-self: end;
 }
 
-@media (max-width: 600px) {
-    .garden-grid{
+@media (max-width: 700px) {
+
+.logoHeader{
+    margin-left: 0;
+}
+
+.instagramHbutton > img{
+    height: 15px;
+    width: 15px;
+}
+
+.instagramHbutton > p{
+    display: none;
+}
+
+.aboutStore{
+    display: grid;
+    grid-template-areas:
+    'img'
+    'title'
+    'txt'
+    'button'
+    ;
+    justify-items: center;
+}
+
+.aboutStore-itemL > img{
+    grid-area: img;
+    width: 70vw;
+    height: 35vw;
+    object-position: center 15%;
+}
+
+.aboutStore-itemR > h1{
+    grid-area: title;
+    font-size: 6vw;
+}
+
+.aboutStore-itemL > p{
+    display: none;
+}
+
+.aboutStore-itemR > p{
+    grid-area: txt;
+    text-align: center;
+    font-size: 2.5vw;
+    width: 80vw;
+}
+
+.aboutStore-itemR > button{
+    grid-area: button;
+}
+
+.aboutStore-itemR{
+    align-items: center;
+}
+
+.garden-grid{
     grid-template-areas: 
     'titleG'
     'textG'
     'button'
     ;
+    justify-content: center;
+    justify-items: center;
+}
+
+.titleGarden > h1{
+    text-align: center;
+    font-size: 6vw;
+    width: 32vw;
+}
+
+.textGarden{
+    max-width: 300px;
+}
+
+.textGarden > p{
+    text-align: center;
+}
+
+.garden-images{
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.gardenBefore{
+    margin-left: -35vw;
 }
 }
 
